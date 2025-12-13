@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - Cosmetics Store</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .container {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .product h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  .product p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  .product button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  .product button:hover {
+    background-color: #555;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Products - Cosmetics Store</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="cart.html">Cart</a> |
+    <a href="checkout.html">Checkout</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="products" id="productsList">
+    <!-- Products will appear here via JavaScript -->
+  </div>
+</div>
+
+<footer>
+  <p>All rights reserved &copy; 2024 - Cosmetics Store</p>
+</footer>
+
+<script>
+  let products = [
+    { id: 1, name: 'Moisturizer', price: 50, image: 'product_moisturizer.jpg', category: 'skincare' },
+    { id: 2, name: 'Perfume', price: 120, image: 'product_perfume.jpg', category: 'perfumes' },
+    { id: 3, name: 'Lipstick', price: 30, image: 'product_lipstick.jpg', category: 'makeup' }
+  ];
+
+  function showProducts(category) {
+    let filteredProducts = products.filter(product => product.category === category);
+    let productsListHTML = '';
+
+    if (filteredProducts.length > 0) {
+      filteredProducts.forEach(product => {
+        productsListHTML += `
+          <div class="product">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>Price: ${product.price} USD</p>
+            <button onclick="addToCart(${product.id})">Add to Cart</button>
+          </div>
+        `;
+      });
+    } else {
+      productsListHTML = '<p>No products available in this category.</p>';
+    }
+
+    document.getElementById('productsList').innerHTML = productsListHTML;
+  }
+
+  function addToCart(productId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let productToAdd = products.find(product => product.id === productId);
+
+    if (productToAdd) {
+      cart.push(productToAdd);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Product added to cart successfully.');
+    } else {
+      alert('Error adding product to cart.');
+    }
+  }
+</script>
+
+</body>
+</html>
