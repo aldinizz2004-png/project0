@@ -6,7 +6,7 @@ if (empty($meal)) {
     exit;
 }
 
-$conn = new mysqli("localhost", "appuser", "apppass", "restaurant_db");
+$conn = new mysqli("db", "appuser", "apppass", "restaurant_db");
 
 if ($conn->connect_error) {
     die("Database connection failed");
