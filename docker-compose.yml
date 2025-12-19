@@ -8,6 +8,11 @@ services:
     container_name: restaurant_web
     ports:
       - "8081:80"
+    environment:
+      DB_HOST: db
+      DB_USER: appuser
+      DB_PASS: apppass
+      DB_NAME: restaurant_db
     depends_on:
       - db
 
