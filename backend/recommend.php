@@ -42,7 +42,7 @@ $conn->close();
             padding: 0;
             height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #0727b5ff, #3e0379ff);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,12 +58,12 @@ $conn->close();
         }
 
         h1 {
-            color: #333;
+            color: #1c1c1cff;
             margin-bottom: 15px;
         }
 
         p {
-            color: #555;
+            color: #4e4c4cff;
             font-size: 16px;
             margin-bottom: 25px;
         }
@@ -101,11 +101,11 @@ $conn->close();
         <div class="restaurant"><?= htmlspecialchars($meal) ?></div>
         <p><?= htmlspecialchars($restaurant) ?></p>
     <?php else: ?>
-        <p>Sorry 😔</p>
+        <p>I am so sorry my friend 😔</p>
         <p>No restaurant found for <b><?= htmlspecialchars($meal) ?></b></p>
     <?php endif; ?>
 
-    <a href="../frontend/index.html">🔙 Try another meal</a>
+    <a href="../frontend/index.html">🔙 how about trying another meal</a>
 </div>
 
 </body>
