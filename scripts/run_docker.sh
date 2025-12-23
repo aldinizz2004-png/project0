@@ -1,16 +1,13 @@
 #!/bin/bash
 set -e
 
-cd /var/www/html/restaurant-app
-
-echo "🐳 Stopping old containers (if any)..."
+echo "🛑 Stopping old containers..."
 docker-compose down || true
 
-echo "🔨 Building images..."
-docker-compose build
+echo "🔨 Rebuilding images from scratch..."
+docker-compose build --no-cache
 
 echo "🚀 Starting containers..."
 docker-compose up -d
 
-echo "✅ Docker mode ON:"
-echo "http://$(hostname -I | awk '{print $1}'):8081/frontend/index.html"
+echo "✅ Deployment finished"
