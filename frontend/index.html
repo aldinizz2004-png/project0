@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Restaurant Recommendation</title>
@@ -60,7 +61,7 @@
             font-size: 16px;
             font-weight: bold;
             color: white;
-            background: #045557;
+            background: #ff06b0ff;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -78,21 +79,23 @@
         }
     </style>
 </head>
+
 <body>
 
-<div class="card">
-    <h1>🍽 Restaurant Finder</h1>
-    <p>Enter your favorite meal and we’ll recommend the best restaurant</p>
+    <div class="card">
+        <h1>🍽 Restaurant Finder</h1>
+        <p>Enter your favorite meal and we’ll recommend the best restaurant</p>
 
-    <form action="../backend/recommend.php" method="POST">
-        <input type="text" name="meal" placeholder="pizza, burger, shawarma..." required>
-        <button type="submit">Recommend</button>
-    </form>
+        <form action="../backend/recommend.php" method="POST">
+            <input type="text" name="meal" placeholder="pizza, burger, shawarma..." required>
+            <button type="submit">Recommend</button>
+        </form>
 
-    <footer>
-        Simple CI/CD Project – Jenkins & Docker
-    </footer>
-</div>
+        <footer>
+            Simple CI/CD Project – Jenkins & Docker
+        </footer>
+    </div>
 
 </body>
+
 </html>
