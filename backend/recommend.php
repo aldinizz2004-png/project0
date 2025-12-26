@@ -42,7 +42,7 @@ $conn->close();
             padding: 0;
             height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0727b5ff, #3e0379ff);
+            background: linear-gradient(135deg, #0727b5ff, #037950ff);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -71,7 +71,7 @@ $conn->close();
         .restaurant {
             font-size: 22px;
             font-weight: bold;
-            color: #667eea;
+            color: #66eaa8ff;
             margin-bottom: 30px;
         }
 
@@ -87,7 +87,7 @@ $conn->close();
         }
 
         a:hover {
-            background: #5a67d8;
+            background: #d85ac9ff;
         }
     </style>
 </head>
