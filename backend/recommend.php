@@ -94,14 +94,14 @@ $conn->close();
 <body>
 
 <div class="card">
-    <h1>🍽 Recommendation</h1>
+    <h1> Recommendation</h1>
 
     <?php if ($restaurant): ?>
         <p>Best restaurant for</p>
         <div class="restaurant"><?= htmlspecialchars($meal) ?></div>
         <p><?= htmlspecialchars($restaurant) ?></p>
     <?php else: ?>
-        <p>I am so sorry my friend 😔</p>
+        <p>I am so sorry my friend !</p>
         <p>No restaurant found for <b><?= htmlspecialchars($meal) ?></b></p>
     <?php endif; ?>
 
